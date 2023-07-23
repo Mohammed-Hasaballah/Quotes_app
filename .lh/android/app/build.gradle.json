@@ -1,0 +1,26 @@
+{
+    "sourceFile": "android/app/build.gradle",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1690117476757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690117575313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).\r\n         applicationId \"com.example.quotes_app\"\r\n         // You can update the following values to match your application needs.\r\n         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.\r\n-        minSdkVersion 19\r\n+        minSdkVersion flutter.minSdkVersion\r\n         targetSdkVersion flutter.targetSdkVersion\r\n         versionCode flutterVersionCode.toInteger()\r\n         versionName flutterVersionName\r\n     }\r\n"
+                },
+                {
+                    "date": 1690117597949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\r\n \r\n def flutterRoot = localProperties.getProperty('flutter.sdk')\r\n if (flutterRoot == null) {\r\n-    throw new radleException(\"Flutter SDK not found. Define location with flutter.sdk in the local.properties file.\")\r\n+    throw new GradleException(\"Flutter SDK not found. Define location with flutter.sdk in the local.properties file.\")\r\n }\r\n \r\n def flutterVersionCode = localProperties.getProperty('flutter.versionCode')\r\n if (flutterVersionCode == null) {\r\n"
+                }
+            ],
+            "date": 1690117476757,
+            "name": "Commit-0",
+            "content": "def localProperties = new Properties()\r\ndef localPropertiesFile = rootProject.file('local.properties')\r\nif (localPropertiesFile.exists()) {\r\n    localPropertiesFile.withReader('UTF-8') { reader ->\r\n        localProperties.load(reader)\r\n    }\r\n}\r\n\r\ndef flutterRoot = localProperties.getProperty('flutter.sdk')\r\nif (flutterRoot == null) {\r\n    throw new GradleException(\"Flutter SDK not found. Define location with flutter.sdk in the local.properties file.\")\r\n}\r\n\r\ndef flutterVersionCode = localProperties.getProperty('flutter.versionCode')\r\nif (flutterVersionCode == null) {\r\n    flutterVersionCode = '1'\r\n}\r\n\r\ndef flutterVersionName = localProperties.getProperty('flutter.versionName')\r\nif (flutterVersionName == null) {\r\n    flutterVersionName = '1.0'\r\n}\r\n\r\napply plugin: 'com.android.application'\r\napply plugin: 'kotlin-android'\r\napply from: \"$flutterRoot/packages/flutter_tools/gradle/flutter.gradle\"\r\n\r\nandroid {\r\n    namespace \"com.example.quotes_app\"\r\n    compileSdkVersion flutter.compileSdkVersion\r\n    ndkVersion flutter.ndkVersion\r\n\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n\r\n    kotlinOptions {\r\n        jvmTarget = '1.8'\r\n    }\r\n\r\n    sourceSets {\r\n        main.java.srcDirs += 'src/main/kotlin'\r\n    }\r\n\r\n    defaultConfig {\r\n        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).\r\n        applicationId \"com.example.quotes_app\"\r\n        // You can update the following values to match your application needs.\r\n        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.\r\n        minSdkVersion 19\r\n        targetSdkVersion flutter.targetSdkVersion\r\n        versionCode flutterVersionCode.toInteger()\r\n        versionName flutterVersionName\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            // TODO: Add your own signing config for the release build.\r\n            // Signing with the debug keys for now, so `flutter run --release` works.\r\n            signingConfig signingConfigs.debug\r\n        }\r\n    }\r\n}\r\n\r\nflutter {\r\n    source '../..'\r\n}\r\n\r\ndependencies {\r\n    implementation \"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version\"\r\n}\r\n"
+        }
+    ]
+}

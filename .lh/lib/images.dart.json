@@ -1,0 +1,106 @@
+{
+    "sourceFile": "lib/images.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 22,
+            "patches": [
+                {
+                    "date": 1690112803615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690112829476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n-class QuoteModel {\r\n+class ImageModel {\r\n   String? provider;\r\n   String? license;\r\n   String? terms;\r\n   String? url;\r\n   Size? size;\r\n \r\n-  QuoteModel({this.provider, this.license, this.terms, this.url, this.size});\r\n+  ImageModel({this.provider, this.license, this.terms, this.url, this.size});\r\n \r\n-  QuoteModel.fromJson(Map<String, dynamic> json) {\r\n+  ImageModel.fromJson(Map<String, dynamic> json) {\r\n     provider = json['provider'];\r\n     license = json['license'];\r\n     terms = json['terms'];\r\n     url = json['url'];\r\n@@ -25,24 +25,5 @@\n       data['size'] = this.size!.toJson();\r\n     }\r\n     return data;\r\n   }\r\n-}\r\n-\r\n-class Size {\r\n-  int? height;\r\n-  int? width;\r\n-\r\n-  Size({this.height, this.width});\r\n-\r\n-  Size.fromJson(Map<String, dynamic> json) {\r\n-    height = json['height'];\r\n-    width = json['width'];\r\n-  }\r\n-\r\n-  Map<String, dynamic> toJson() {\r\n-    final Map<String, dynamic> data = new Map<String, dynamic>();\r\n-    data['height'] = this.height;\r\n-    data['width'] = this.width;\r\n-    return data;\r\n-  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1690112838380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n   String? provider;\r\n   String? license;\r\n   String? terms;\r\n   String? url;\r\n-  Size? size;\r\n \r\n+\r\n   ImageModel({this.provider, this.license, this.terms, this.url, this.size});\r\n \r\n   ImageModel.fromJson(Map<String, dynamic> json) {\r\n     provider = json['provider'];\r\n"
+                },
+                {
+                    "date": 1690112845026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,7 @@\n class ImageModel {\r\n-  String? provider;\r\n-  String? license;\r\n-  String? terms;\r\n   String? url;\r\n \r\n-\r\n   ImageModel({this.provider, this.license, this.terms, this.url, this.size});\r\n \r\n   ImageModel.fromJson(Map<String, dynamic> json) {\r\n     provider = json['provider'];\r\n"
+                },
+                {
+                    "date": 1690112854832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n class ImageModel {\r\n   String? url;\r\n \r\n-  ImageModel({this.provider, this.license, this.terms, this.url, this.size});\r\n \r\n+\r\n   ImageModel.fromJson(Map<String, dynamic> json) {\r\n     provider = json['provider'];\r\n     license = json['license'];\r\n     terms = json['terms'];\r\n"
+                },
+                {
+                    "date": 1690112861299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,9 @@\n \r\n \r\n \r\n   ImageModel.fromJson(Map<String, dynamic> json) {\r\n-    provider = json['provider'];\r\n-    license = json['license'];\r\n-    terms = json['terms'];\r\n     url = json['url'];\r\n-    size = json['size'] != null ? new Size.fromJson(json['size']) : null;\r\n   }\r\n \r\n   Map<String, dynamic> toJson() {\r\n     final Map<String, dynamic> data = new Map<String, dynamic>();\r\n"
+                },
+                {
+                    "date": 1690112868667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,14 +8,9 @@\n   }\r\n \r\n   Map<String, dynamic> toJson() {\r\n     final Map<String, dynamic> data = new Map<String, dynamic>();\r\n-    data['provider'] = this.provider;\r\n-    data['license'] = this.license;\r\n-    data['terms'] = this.terms;\r\n     data['url'] = this.url;\r\n-    if (this.size != null) {\r\n-      data['size'] = this.size!.toJson();\r\n-    }\r\n+\r\n     return data;\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1690112875257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+class ImageModel {\r\n+  String? url;\r\n+\r\n+  ImageModel.fromJson(Map<String, dynamic> json) {\r\n+    url = json['url'];\r\n+  }\r\n+\r\n+  Map<String, dynamic> toJson() {\r\n+    final Map<String, dynamic> data = <String, dynamic>{};\r\n+    data['url'] = url;\r\n+\r\n+    return data;\r\n+  }\r\n+  \r\n+}\r\n"
+                },
+                {
+                    "date": 1690112883411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,22 +10,14 @@\n     data['url'] = url;\r\n \r\n     return data;\r\n   }\r\n-  \r\n-}\r\n-class ImageModel {\r\n-  String? url;\r\n+   Future<void> getQoute() async {\r\n+    Map<String, dynamic> quoteInfo =\r\n+        await NetworkHelper(url: 'https://api.quotable.io/random').getData();\r\n \r\n-\r\n-\r\n-  ImageModel.fromJson(Map<String, dynamic> json) {\r\n-    url = json['url'];\r\n+    print(quoteInfo);\r\n+    content = quoteInfo['content'];\r\n+    author = quoteInfo['author'];\r\n+    tags = quoteInfo['tags'][0];\r\n   }\r\n-\r\n\\ No newline at end of file\n-  Map<String, dynamic> toJson() {\r\n-    final Map<String, dynamic> data = new Map<String, dynamic>();\r\n-    data['url'] = this.url;\r\n-\r\n-    return data;\r\n-  }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1690112890600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     data['url'] = url;\r\n \r\n     return data;\r\n   }\r\n-   Future<void> getQoute() async {\r\n+   Future<void> getRandomImage() async {\r\n     Map<String, dynamic> quoteInfo =\r\n         await NetworkHelper(url: 'https://api.quotable.io/random').getData();\r\n \r\n     print(quoteInfo);\r\n"
+                },
+                {
+                    "date": 1690112899131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,6 @@\n    Future<void> getRandomImage() async {\r\n     Map<String, dynamic> quoteInfo =\r\n         await NetworkHelper(url: 'https://api.quotable.io/random').getData();\r\n \r\n-    print(quoteInfo);\r\n-    content = quoteInfo['content'];\r\n-    author = quoteInfo['author'];\r\n-    tags = quoteInfo['tags'][0];\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1690112906176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import 'networking.dart';\r\n+\r\n class ImageModel {\r\n   String? url;\r\n \r\n   ImageModel.fromJson(Map<String, dynamic> json) {\r\n@@ -11,9 +13,9 @@\n \r\n     return data;\r\n   }\r\n    Future<void> getRandomImage() async {\r\n-    Map<String, dynamic> quoteInfo =\r\n+    Map<String, dynamic> imageInfo =\r\n         await NetworkHelper(url: 'https://api.quotable.io/random').getData();\r\n \r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1690112932568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     return data;\r\n   }\r\n    Future<void> getRandomImage() async {\r\n     Map<String, dynamic> imageInfo =\r\n-        await NetworkHelper(url: 'https://api.quotable.io/random').getData();\r\n+        await NetworkHelper(url: 'https://random.imagecdn.app/v1/image?category=buildings&format=json').getData();\r\n \r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1690112941496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     data['url'] = url;\r\n \r\n     return data;\r\n   }\r\n-   Future<void> getRandomImage() async {\r\n+   Future<void> getRandomImage(String Ca) async {\r\n     Map<String, dynamic> imageInfo =\r\n         await NetworkHelper(url: 'https://random.imagecdn.app/v1/image?category=buildings&format=json').getData();\r\n \r\n   }\r\n"
+                },
+                {
+                    "date": 1690112948194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     data['url'] = url;\r\n \r\n     return data;\r\n   }\r\n-   Future<void> getRandomImage(String Ca) async {\r\n+   Future<void> getRandomImage(String category) async {\r\n     Map<String, dynamic> imageInfo =\r\n         await NetworkHelper(url: 'https://random.imagecdn.app/v1/image?category=buildings&format=json').getData();\r\n \r\n   }\r\n"
+                },
+                {
+                    "date": 1690112953581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,12 @@\n     data['url'] = url;\r\n \r\n     return data;\r\n   }\r\n-   Future<void> getRandomImage(String category) async {\r\n-    Map<String, dynamic> imageInfo =\r\n-        await NetworkHelper(url: 'https://random.imagecdn.app/v1/image?category=buildings&format=json').getData();\r\n \r\n+  Future<void> getRandomImage({String category}) async {\r\n+    Map<String, dynamic> imageInfo = await NetworkHelper(\r\n+            url:\r\n+                'https://random.imagecdn.app/v1/image?category=buildings&format=json')\r\n+        .getData();\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1690112964611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,11 @@\n \r\n     return data;\r\n   }\r\n \r\n-  Future<void> getRandomImage({String category}) async {\r\n+  Future<void> getRandomImage(String category) async {\r\n     Map<String, dynamic> imageInfo = await NetworkHelper(\r\n             url:\r\n-                'https://random.imagecdn.app/v1/image?category=buildings&format=json')\r\n+                'https://random.imagecdn.app/v1/image?category=$&format=json')\r\n         .getData();\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1690112972595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n \r\n   Future<void> getRandomImage(String category) async {\r\n     Map<String, dynamic> imageInfo = await NetworkHelper(\r\n             url:\r\n-                'https://random.imagecdn.app/v1/image?category=$&format=json')\r\n+                'https://random.imagecdn.app/v1/image?category=$category&format=json')\r\n         .getData();\r\n+        \r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1690112977980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n     Map<String, dynamic> imageInfo = await NetworkHelper(\r\n             url:\r\n                 'https://random.imagecdn.app/v1/image?category=$category&format=json')\r\n         .getData();\r\n-        \r\n+        url = imageInfo['url'];\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1690113614700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+import 'networking.dart';\r\n+\r\n+class ImageModel {\r\n+  String? url;\r\n+  \r\n+  ImageModel.fromJson(Map<String, dynamic> json) {\r\n+    url = json['url'];\r\n+  }\r\n+\r\n+  Map<String, dynamic> toJson() {\r\n+    final Map<String, dynamic> data = <String, dynamic>{};\r\n+    data['url'] = url;\r\n+\r\n+    return data;\r\n+  }\r\n+\r\n+  Future<void> getRandomImage(String category) async {\r\n+    Map<String, dynamic> imageInfo = await NetworkHelper(\r\n+            url:\r\n+                'https://random.imagecdn.app/v1/image?category=$category&format=json')\r\n+        .getData();\r\n+    url = imageInfo['url'];\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1690113621262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'networking.dart';\r\n \r\n class ImageModel {\r\n-  String? url;\r\n+  late String url;\r\n   \r\n   ImageModel.fromJson(Map<String, dynamic> json) {\r\n     url = json['url'];\r\n   }\r\n@@ -21,28 +21,4 @@\n         .getData();\r\n     url = imageInfo['url'];\r\n   }\r\n }\r\n-import 'networking.dart';\r\n-\r\n-class ImageModel {\r\n-  String? url;\r\n-\r\n-  ImageModel.fromJson(Map<String, dynamic> json) {\r\n-    url = json['url'];\r\n-  }\r\n-\r\n-  Map<String, dynamic> toJson() {\r\n-    final Map<String, dynamic> data = <String, dynamic>{};\r\n-    data['url'] = url;\r\n-\r\n-    return data;\r\n-  }\r\n-\r\n-  Future<void> getRandomImage(String category) async {\r\n-    Map<String, dynamic> imageInfo = await NetworkHelper(\r\n-            url:\r\n-                'https://random.imagecdn.app/v1/image?category=$category&format=json')\r\n-        .getData();\r\n-        url = imageInfo['url'];\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1690113698978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,10 @@\n \r\n class ImageModel {\r\n   late String url;\r\n   \r\n-  ImageModel.fromJson(Map<String, dynamic> json) {\r\n-    url = json['url'];\r\n-  }\r\n \r\n+\r\n   Map<String, dynamic> toJson() {\r\n     final Map<String, dynamic> data = <String, dynamic>{};\r\n     data['url'] = url;\r\n \r\n"
+                },
+                {
+                    "date": 1690113704829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n class ImageModel {\r\n   late String url;\r\n   \r\n \r\n-\r\n   Map<String, dynamic> toJson() {\r\n     final Map<String, dynamic> data = <String, dynamic>{};\r\n     data['url'] = url;\r\n \r\n"
+                }
+            ],
+            "date": 1690112803615,
+            "name": "Commit-0",
+            "content": "class QuoteModel {\r\n  String? provider;\r\n  String? license;\r\n  String? terms;\r\n  String? url;\r\n  Size? size;\r\n\r\n  QuoteModel({this.provider, this.license, this.terms, this.url, this.size});\r\n\r\n  QuoteModel.fromJson(Map<String, dynamic> json) {\r\n    provider = json['provider'];\r\n    license = json['license'];\r\n    terms = json['terms'];\r\n    url = json['url'];\r\n    size = json['size'] != null ? new Size.fromJson(json['size']) : null;\r\n  }\r\n\r\n  Map<String, dynamic> toJson() {\r\n    final Map<String, dynamic> data = new Map<String, dynamic>();\r\n    data['provider'] = this.provider;\r\n    data['license'] = this.license;\r\n    data['terms'] = this.terms;\r\n    data['url'] = this.url;\r\n    if (this.size != null) {\r\n      data['size'] = this.size!.toJson();\r\n    }\r\n    return data;\r\n  }\r\n}\r\n\r\nclass Size {\r\n  int? height;\r\n  int? width;\r\n\r\n  Size({this.height, this.width});\r\n\r\n  Size.fromJson(Map<String, dynamic> json) {\r\n    height = json['height'];\r\n    width = json['width'];\r\n  }\r\n\r\n  Map<String, dynamic> toJson() {\r\n    final Map<String, dynamic> data = new Map<String, dynamic>();\r\n    data['height'] = this.height;\r\n    data['width'] = this.width;\r\n    return data;\r\n  }\r\n}"
+        }
+    ]
+}

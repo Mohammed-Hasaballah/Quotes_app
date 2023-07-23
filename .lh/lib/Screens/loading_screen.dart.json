@@ -1,0 +1,58 @@
+{
+    "sourceFile": "lib/Screens/loading_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1690116175164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690116196553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import 'package:flutter/material.dart';\r\n import 'package:flutter_spinkit/flutter_spinkit.dart';\r\n-import 'package:quotes_app/images.dart';\r\n+import 'package:quotes_app/services/images.dart';\r\n import 'package:quotes_app/quotes.dart';\r\n \r\n import 'home_screen.dart';\r\n \r\n"
+                },
+                {
+                    "date": 1690116205195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\r\n import 'package:flutter_spinkit/flutter_spinkit.dart';\r\n import 'package:quotes_app/services/images.dart';\r\n-import 'package:quotes_app/quotes.dart';\r\n+import 'package:quotes_app/services/quotes.dart';\r\n \r\n import 'home_screen.dart';\r\n \r\n class LoadingScreen extends StatefulWidget {\r\n"
+                },
+                {
+                    "date": 1690116293078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,20 +50,20 @@\n                   fontSize: 50,\r\n                   fontWeight: FontWeight.bold,\r\n                   fontFamily: 'Spartan MB'),\r\n             ),\r\n+            // SizedBox(\r\n+            //   height: 8,\r\n+            // ),\r\n+            // Text(\r\n+            //   'Your quick quote App',\r\n+            //   style: TextStyle(\r\n+            //       color: Color.fromARGB(255, 202, 199, 199),\r\n+            //       fontSize: 14,\r\n+            //       fontWeight: FontWeight.bold,\r\n+            //       fontFamily: 'Spartan MB'),\r\n+            // ),\r\n             SizedBox(\r\n-              height: 8,\r\n-            ),\r\n-            Text(\r\n-              'Your quick quote App',\r\n-              style: TextStyle(\r\n-                  color: Color.fromARGB(255, 202, 199, 199),\r\n-                  fontSize: 14,\r\n-                  fontWeight: FontWeight.bold,\r\n-                  fontFamily: 'Spartan MB'),\r\n-            ),\r\n-            SizedBox(\r\n               height: 40,\r\n             ),\r\n             SpinKitFadingCube(\r\n               color: Colors.white,\r\n"
+                },
+                {
+                    "date": 1690116305699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,19 +50,9 @@\n                   fontSize: 50,\r\n                   fontWeight: FontWeight.bold,\r\n                   fontFamily: 'Spartan MB'),\r\n             ),\r\n-            // SizedBox(\r\n-            //   height: 8,\r\n-            // ),\r\n-            // Text(\r\n-            //   'Your quick quote App',\r\n-            //   style: TextStyle(\r\n-            //       color: Color.fromARGB(255, 202, 199, 199),\r\n-            //       fontSize: 14,\r\n-            //       fontWeight: FontWeight.bold,\r\n-            //       fontFamily: 'Spartan MB'),\r\n-            // ),\r\n+ \r\n             SizedBox(\r\n               height: 40,\r\n             ),\r\n             SpinKitFadingCube(\r\n"
+                },
+                {
+                    "date": 1690117981701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Scaffold(\r\n-      backgroundColor: Color.fromARGB(255, 94, 56, 13),\r\n+      backgroundColor: Colors.\r\n       body: Center(\r\n         child: Column(\r\n           mainAxisAlignment: MainAxisAlignment.center,\r\n           children: [\r\n@@ -50,9 +50,8 @@\n                   fontSize: 50,\r\n                   fontWeight: FontWeight.bold,\r\n                   fontFamily: 'Spartan MB'),\r\n             ),\r\n- \r\n             SizedBox(\r\n               height: 40,\r\n             ),\r\n             SpinKitFadingCube(\r\n"
+                },
+                {
+                    "date": 1690117987427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Scaffold(\r\n-      backgroundColor: Colors.\r\n+      backgroundColor: Colors.black,\r\n       body: Center(\r\n         child: Column(\r\n           mainAxisAlignment: MainAxisAlignment.center,\r\n           children: [\r\n"
+                },
+                {
+                    "date": 1690118050291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         child: Column(\r\n           mainAxisAlignment: MainAxisAlignment.center,\r\n           children: [\r\n             Text(\r\n-              'Quotes',\r\n+              'Quotify',\r\n               style: TextStyle(\r\n                   color: Colors.white,\r\n                   fontSize: 50,\r\n                   fontWeight: FontWeight.bold,\r\n"
+                },
+                {
+                    "date": 1690118061301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n                   fontSize: 50,\r\n                   fontWeight: FontWeight.bold,\r\n                   fontFamily: 'Spartan MB'),\r\n             ),\r\n+            SizedBox(height: 4,)\r\n             SizedBox(\r\n               height: 40,\r\n             ),\r\n             SpinKitFadingCube(\r\n"
+                },
+                {
+                    "date": 1690118068352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,12 +48,12 @@\n               style: TextStyle(\r\n                   color: Colors.white,\r\n                   fontSize: 50,\r\n                   fontWeight: FontWeight.bold,\r\n-                  fontFamily: 'Spartan MB'),\r\n+                   ),\r\n             ),\r\n             SizedBox(height: 4,),\r\n-            \r\n+\r\n             SizedBox(\r\n               height: 40,\r\n             ),\r\n             SpinKitFadingCube(\r\n"
+                },
+                {
+                    "date": 1690118106378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n             SizedBox(\r\n               height: 4,\r\n             ),\r\n             Text(\r\n-              'Your quick weather report',\r\n+              'Discover and Collect Inspiring Quotes',\r\n               style: TextStyle(\r\n                   color: Color.fromARGB(255, 202, 199, 199),\r\n                   fontSize: 14,\r\n                   fontWeight: FontWeight.bold,\r\n"
+                }
+            ],
+            "date": 1690116175164,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\nimport 'package:flutter_spinkit/flutter_spinkit.dart';\r\nimport 'package:quotes_app/images.dart';\r\nimport 'package:quotes_app/quotes.dart';\r\n\r\nimport 'home_screen.dart';\r\n\r\nclass LoadingScreen extends StatefulWidget {\r\n  const LoadingScreen({super.key});\r\n\r\n  @override\r\n  State<LoadingScreen> createState() => _LoadingScreenState();\r\n}\r\n\r\nclass _LoadingScreenState extends State<LoadingScreen> {\r\n  void getData() async {\r\n    QuoteModel quote = QuoteModel();\r\n    ImageModel image = ImageModel();\r\n    await quote.getRandomQoute();\r\n    await image.getRandomImage(quote.tag);\r\n    if (mounted) {\r\n      Navigator.push(\r\n          context,\r\n          MaterialPageRoute(\r\n              builder: ((context) => HomeScreen(\r\n                    quoteInfo: quote,\r\n                    imageInfo: image,\r\n                  ))));\r\n    }\r\n  }\r\n\r\n  @override\r\n  void initState() {\r\n    getData();\r\n    super.initState();\r\n  }\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return const Scaffold(\r\n      backgroundColor: Color.fromARGB(255, 94, 56, 13),\r\n      body: Center(\r\n        child: Column(\r\n          mainAxisAlignment: MainAxisAlignment.center,\r\n          children: [\r\n            Text(\r\n              'Quotes',\r\n              style: TextStyle(\r\n                  color: Colors.white,\r\n                  fontSize: 50,\r\n                  fontWeight: FontWeight.bold,\r\n                  fontFamily: 'Spartan MB'),\r\n            ),\r\n            SizedBox(\r\n              height: 8,\r\n            ),\r\n            Text(\r\n              'Your quick quote App',\r\n              style: TextStyle(\r\n                  color: Color.fromARGB(255, 202, 199, 199),\r\n                  fontSize: 14,\r\n                  fontWeight: FontWeight.bold,\r\n                  fontFamily: 'Spartan MB'),\r\n            ),\r\n            SizedBox(\r\n              height: 40,\r\n            ),\r\n            SpinKitFadingCube(\r\n              color: Colors.white,\r\n              size: 50.0,\r\n            ),\r\n          ],\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}

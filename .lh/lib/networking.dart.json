@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/networking.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1690112053325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690112101200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\r\n class NetworkHelper {\r\n   final String url;\r\n   NetworkHelper({required this.url});\r\n \r\n"
+                }
+            ],
+            "date": 1690112053325,
+            "name": "Commit-0",
+            "content": "class NetworkHelper {\r\n  final String url;\r\n  NetworkHelper({required this.url});\r\n\r\n  Future<Map<String, dynamic>> getData() async {\r\n    http.Response response = await http.get(Uri.parse(url));\r\n    if (response.statusCode == 200) {\r\n      return jsonDecode(response.body);\r\n    }\r\n    return Future.error('Error while fetching data');\r\n  }\r\n}"
+        }
+    ]
+}

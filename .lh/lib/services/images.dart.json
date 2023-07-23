@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/services/images.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1690116196677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1690116196677,
+            "name": "Commit-0",
+            "content": "import '../networking.dart';\r\n\r\nclass ImageModel {\r\n  late String url;\r\n\r\n  Map<String, dynamic> toJson() {\r\n    final Map<String, dynamic> data = <String, dynamic>{};\r\n    data['url'] = url;\r\n\r\n    return data;\r\n  }\r\n\r\n  Future<void> getRandomImage(String category) async {\r\n    Map<String, dynamic> imageInfo = await NetworkHelper(\r\n            url:\r\n                'https://random.imagecdn.app/v1/image?category=$category&format=json')\r\n        .getData();\r\n    url = imageInfo['url'];\r\n  }\r\n}\r\n"
+        }
+    ]
+}

@@ -1,0 +1,142 @@
+{
+    "sourceFile": "lib/home_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 31,
+            "patches": [
+                {
+                    "date": 1690113292430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690113302294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,15 @@\n-cla\n\\ No newline at end of file\n+import 'package:flutter/material.dart';\r\n+\r\n+class HomeScreen extends StatefulWidget {\r\n+  const HomeScreen({super.key});\r\n+\r\n+  @override\r\n+  State<HomeScreen> createState() => _HomeScreenState();\r\n+}\r\n+\r\n+class _HomeScreenState extends State<HomeScreen> {\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return const Placeholder();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1690113341109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import 'package:flutter/material.dart';\r\n \r\n class HomeScreen extends StatefulWidget {\r\n+  Q\r\n   const HomeScreen({super.key});\r\n \r\n   @override\r\n   State<HomeScreen> createState() => _HomeScreenState();\r\n"
+                },
+                {
+                    "date": 1690113349016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import 'package:flutter/material.dart';\r\n+import 'package:quotes_app/quotes.dart';\r\n \r\n class HomeScreen extends StatefulWidget {\r\n-  Q\r\n+  QuoteModel quoteInfo; \r\n   const HomeScreen({super.key});\r\n \r\n   @override\r\n   State<HomeScreen> createState() => _HomeScreenState();\r\n@@ -12,5 +13,5 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Placeholder();\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1690113357738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import 'package:quotes_app/quotes.dart';\r\n \r\n class HomeScreen extends StatefulWidget {\r\n   QuoteModel quoteInfo; \r\n+  Image\r\n   const HomeScreen({super.key});\r\n \r\n   @override\r\n   State<HomeScreen> createState() => _HomeScreenState();\r\n"
+                },
+                {
+                    "date": 1690113365897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import 'package:flutter/material.dart';\r\n+import 'package:quotes_app/images.dart';\r\n import 'package:quotes_app/quotes.dart';\r\n \r\n class HomeScreen extends StatefulWidget {\r\n-  QuoteModel quoteInfo; \r\n-  Image\r\n+  QuoteModel quoteInfo;\r\n+  ImageModel imageInfo; \r\n   const HomeScreen({super.key});\r\n \r\n   @override\r\n   State<HomeScreen> createState() => _HomeScreenState();\r\n"
+                },
+                {
+                    "date": 1690113372221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n class HomeScreen extends StatefulWidget {\r\n   QuoteModel quoteInfo;\r\n   ImageModel imageInfo; \r\n-  const HomeScreen({super.key});\r\n+  const HomeScreen({super.key , });\r\n \r\n   @override\r\n   State<HomeScreen> createState() => _HomeScreenState();\r\n }\r\n"
+                },
+                {
+                    "date": 1690113381806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,18 @@\n+// ignore_for_file: public_member_api_docs, sort_constructors_first\r\n import 'package:flutter/material.dart';\r\n+\r\n import 'package:quotes_app/images.dart';\r\n import 'package:quotes_app/quotes.dart';\r\n \r\n class HomeScreen extends StatefulWidget {\r\n   QuoteModel quoteInfo;\r\n   ImageModel imageInfo; \r\n-  const HomeScreen({super.key , });\r\n+   s HomeScreen({\r\n+    Key? key,\r\n+    required this.quoteInfo,\r\n+    required this.imageInfo,\r\n+  }) : super(key: key);\r\n \r\n   @override\r\n   State<HomeScreen> createState() => _HomeScreenState();\r\n }\r\n"
+                },
+                {
+                    "date": 1690113387006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n-// ignore_for_file: public_member_api_docs, sort_constructors_first\r\n+// ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable\r\n import 'package:flutter/material.dart';\r\n \r\n import 'package:quotes_app/images.dart';\r\n import 'package:quotes_app/quotes.dart';\r\n \r\n class HomeScreen extends StatefulWidget {\r\n   QuoteModel quoteInfo;\r\n-  ImageModel imageInfo; \r\n-   s HomeScreen({\r\n+  ImageModel imageInfo;\r\n+  HomeScreen({\r\n     Key? key,\r\n     required this.quoteInfo,\r\n     required this.imageInfo,\r\n   }) : super(key: key);\r\n"
+                },
+                {
+                    "date": 1690113426742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n   State<HomeScreen> createState() => _HomeScreenState();\r\n }\r\n \r\n class _HomeScreenState extends State<HomeScreen> {\r\n+  \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Placeholder();\r\n   }\r\n"
+                },
+                {
+                    "date": 1690113440096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n   State<HomeScreen> createState() => _HomeScreenState();\r\n }\r\n \r\n class _HomeScreenState extends State<HomeScreen> {\r\n-  \r\n+  late String imageURL; \r\n+  late String \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Placeholder();\r\n   }\r\n"
+                },
+                {
+                    "date": 1690113447469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n   State<HomeScreen> createState() => _HomeScreenState();\r\n }\r\n \r\n class _HomeScreenState extends State<HomeScreen> {\r\n-  late String imageURL; \r\n+  late String imageURL;\r\n+  late String quote; \r\n   late String \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Placeholder();\r\n"
+                },
+                {
+                    "date": 1690113453612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n \r\n class _HomeScreenState extends State<HomeScreen> {\r\n   late String imageURL;\r\n   late String quote; \r\n-  late String \r\n+  late String authorName; \r\n+  \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Placeholder();\r\n   }\r\n"
+                },
+                {
+                    "date": 1690113518871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,17 @@\n }\r\n \r\n class _HomeScreenState extends State<HomeScreen> {\r\n   late String imageURL;\r\n-  late String quote; \r\n-  late String authorName; \r\n-  \r\n+  late String quote;\r\n+  late String authorName;\r\n+  void updateUI(WeatherModel weatherData) {\r\n+    temp = weatherData.temp.toInt();\r\n+    cityName = weatherData.cityName;\r\n+    icon = weatherData.getWeatherIcon();\r\n+    description = weatherData.getMessage();\r\n+    weatherDesc = weatherData.weatherDesc;\r\n+  }\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Placeholder();\r\n   }\r\n"
+                },
+                {
+                    "date": 1690113529298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n class _HomeScreenState extends State<HomeScreen> {\r\n   late String imageURL;\r\n   late String quote;\r\n   late String authorName;\r\n+  Quo\r\n   void updateUI(WeatherModel weatherData) {\r\n     temp = weatherData.temp.toInt();\r\n     cityName = weatherData.cityName;\r\n     icon = weatherData.getWeatherIcon();\r\n"
+                },
+                {
+                    "date": 1690113534704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,16 +20,18 @@\n class _HomeScreenState extends State<HomeScreen> {\r\n   late String imageURL;\r\n   late String quote;\r\n   late String authorName;\r\n-  Quo\r\n+  QuoteModel quoteModel; \r\n+  \r\n   void updateUI(WeatherModel weatherData) {\r\n     temp = weatherData.temp.toInt();\r\n     cityName = weatherData.cityName;\r\n     icon = weatherData.getWeatherIcon();\r\n     description = weatherData.getMessage();\r\n     weatherDesc = weatherData.weatherDesc;\r\n   }\r\n+\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Placeholder();\r\n   }\r\n"
+                },
+                {
+                    "date": 1690113541981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n class _HomeScreenState extends State<HomeScreen> {\r\n   late String imageURL;\r\n   late String quote;\r\n   late String authorName;\r\n-  QuoteModel quoteModel; \r\n-  \r\n+  QuoteModel quoteModel = ; \r\n+  ImageModel imageModel;\r\n   void updateUI(WeatherModel weatherData) {\r\n     temp = weatherData.temp.toInt();\r\n     cityName = weatherData.cityName;\r\n     icon = weatherData.getWeatherIcon();\r\n"
+                },
+                {
+                    "date": 1690113555076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n class _HomeScreenState extends State<HomeScreen> {\r\n   late String imageURL;\r\n   late String quote;\r\n   late String authorName;\r\n-  QuoteModel quoteModel = ; \r\n-  ImageModel imageModel;\r\n+  QuoteModel quoteModel = QuoteModel(); \r\n+  ImageModel imageModel = ;\r\n   void updateUI(WeatherModel weatherData) {\r\n     temp = weatherData.temp.toInt();\r\n     cityName = weatherData.cityName;\r\n     icon = weatherData.getWeatherIcon();\r\n"
+                },
+                {
+                    "date": 1690113562084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,10 @@\n   late String imageURL;\r\n   late String quote;\r\n   late String authorName;\r\n   QuoteModel quoteModel = QuoteModel(); \r\n-  ImageModel imageModel = ;\r\n-  void updateUI(WeatherModel weatherData) {\r\n+  ImageModel imageModel = ImageModel();\r\n+  void updateUI(QuoteModel weatherData) {\r\n     temp = weatherData.temp.toInt();\r\n     cityName = weatherData.cityName;\r\n     icon = weatherData.getWeatherIcon();\r\n     description = weatherData.getMessage();\r\n"
+                },
+                {
+                    "date": 1690113576335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   late String quote;\r\n   late String authorName;\r\n   QuoteModel quoteModel = QuoteModel(); \r\n   ImageModel imageModel = ImageModel();\r\n-  void updateUI(QuoteModel weatherData) {\r\n+  void updateUI(QuoteModel quoteModel , imageModel ) {\r\n     temp = weatherData.temp.toInt();\r\n     cityName = weatherData.cityName;\r\n     icon = weatherData.getWeatherIcon();\r\n     description = weatherData.getMessage();\r\n"
+                },
+                {
+                    "date": 1690113590631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,12 @@\n   late String imageURL;\r\n   late String quote;\r\n   late String authorName;\r\n   QuoteModel quoteModel = QuoteModel(); \r\n-  ImageModel imageModel = ImageModel();\r\n-  void updateUI(QuoteModel quoteModel , imageModel ) {\r\n+  ImageModel imageModel = ImageModel(\r\n+    \r\n+  );\r\n+  void updateUI(QuoteModel quoteModel , imageModelimageModel ) {\r\n     temp = weatherData.temp.toInt();\r\n     cityName = weatherData.cityName;\r\n     icon = weatherData.getWeatherIcon();\r\n     description = weatherData.getMessage();\r\n"
+                },
+                {
+                    "date": 1690113601674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   late String quote;\r\n   late String authorName;\r\n   QuoteModel quoteModel = QuoteModel(); \r\n   ImageModel imageModel = ImageModel(\r\n-    \r\n+    url: '',\r\n   );\r\n   void updateUI(QuoteModel quoteModel , imageModelimageModel ) {\r\n     temp = weatherData.temp.toInt();\r\n     cityName = weatherData.cityName;\r\n"
+                },
+                {
+                    "date": 1690113655350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,9 @@\n   late String imageURL;\r\n   late String quote;\r\n   late String authorName;\r\n   QuoteModel quoteModel = QuoteModel(); \r\n-  ImageModel imageModel = ImageModel(\r\n-    url: '',\r\n-  );\r\n+  ImageModel imageModel = ImageModel();\r\n   void updateUI(QuoteModel quoteModel , imageModelimageModel ) {\r\n     temp = weatherData.temp.toInt();\r\n     cityName = weatherData.cityName;\r\n     icon = weatherData.getWeatherIcon();\r\n"
+                },
+                {
+                    "date": 1690113683056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,13 +23,8 @@\n   late String authorName;\r\n   QuoteModel quoteModel = QuoteModel(); \r\n   ImageModel imageModel = ImageModel();\r\n   void updateUI(QuoteModel quoteModel , imageModelimageModel ) {\r\n-    temp = weatherData.temp.toInt();\r\n-    cityName = weatherData.cityName;\r\n-    icon = weatherData.getWeatherIcon();\r\n-    description = weatherData.getMessage();\r\n-    weatherDesc = weatherData.weatherDesc;\r\n   }\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n"
+                },
+                {
+                    "date": 1690113957368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,13 @@\n class _HomeScreenState extends State<HomeScreen> {\r\n   late String imageURL;\r\n   late String quote;\r\n   late String authorName;\r\n-  QuoteModel quoteModel = QuoteModel(); \r\n+  QuoteModel quoteModel = QuoteModel();\r\n   ImageModel imageModel = ImageModel();\r\n-  void updateUI(QuoteModel quoteModel , imageModelimageModel ) {\r\n+\r\n+  void updateUI(QuoteModel quoteModel, imageModelimageModel) {\r\n+    \r\n   }\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n"
+                },
+                {
+                    "date": 1690113963775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   QuoteModel quoteModel = QuoteModel();\r\n   ImageModel imageModel = ImageModel();\r\n \r\n   void updateUI(QuoteModel quoteModel, imageModelimageModel) {\r\n-    \r\n+    imageURL = \r\n   }\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n"
+                },
+                {
+                    "date": 1690113975146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n   late String authorName;\r\n   QuoteModel quoteModel = QuoteModel();\r\n   ImageModel imageModel = ImageModel();\r\n \r\n-  void updateUI(QuoteModel quoteModel, imageModelimageModel) {\r\n+  void updateUI(QuoteModel quoteModel, ImageModel imageModel) {\r\n     imageURL = \r\n   }\r\n \r\n   @override\r\n"
+                },
+                {
+                    "date": 1690113982463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,10 @@\n   QuoteModel quoteModel = QuoteModel();\r\n   ImageModel imageModel = ImageModel();\r\n \r\n   void updateUI(QuoteModel quoteModel, ImageModel imageModel) {\r\n-    imageURL = \r\n+    imageURL = imageModel.url;\r\n+    \r\n   }\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n"
+                },
+                {
+                    "date": 1690113987623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n   ImageModel imageModel = ImageModel();\r\n \r\n   void updateUI(QuoteModel quoteModel, ImageModel imageModel) {\r\n     imageURL = imageModel.url;\r\n+    quote = quoteModel.content;\r\n     \r\n   }\r\n \r\n   @override\r\n"
+                },
+                {
+                    "date": 1690114015657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,15 @@\n \r\n   void updateUI(QuoteModel quoteModel, ImageModel imageModel) {\r\n     imageURL = imageModel.url;\r\n     quote = quoteModel.content;\r\n-    \r\n+    authorName = quoteModel.author;\r\n   }\r\n-\r\n+@override\r\n+  void initState() {\r\n+    updateUI(widget.weatherData);\r\n+    super.initState();\r\n+  }\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Placeholder();\r\n   }\r\n"
+                },
+                {
+                    "date": 1690114032286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     authorName = quoteModel.author;\r\n   }\r\n @override\r\n   void initState() {\r\n-    updateUI(widget.quoteInfo , w);\r\n+    updateUI(widget.quoteInfo , widget);\r\n     super.initState();\r\n   }\r\n   @override\r\n   Widget build(BuildContext context) {\r\n"
+                },
+                {
+                    "date": 1690114049501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,7 +37,7 @@\n   }\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const ();\r\n+    return Scaffold ();\r\n   }\r\n }\r\n"
+                }
+            ],
+            "date": 1690113292430,
+            "name": "Commit-0",
+            "content": "cla"
+        }
+    ]
+}

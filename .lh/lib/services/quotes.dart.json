@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/services/quotes.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1690116205303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1690116205303,
+            "name": "Commit-0",
+            "content": "// ignore_for_file: avoid_print\r\n\r\nimport 'networking.dart';\r\n\r\nclass QuoteModel {\r\n  late String content;\r\n  late String author;\r\n  late String tag;\r\n\r\n  Future<void> getRandomQoute() async {\r\n    Map<String, dynamic> quoteInfo =\r\n        await NetworkHelper(url: 'https://api.quotable.io/random').getData();\r\n\r\n    print(quoteInfo);\r\n    content = quoteInfo['content'];\r\n    author = quoteInfo['author'];\r\n    tag = quoteInfo['tags'][0];\r\n  }\r\n   \r\n}\r\n"
+        }
+    ]
+}

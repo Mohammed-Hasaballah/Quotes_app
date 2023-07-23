@@ -1,0 +1,38 @@
+{
+    "sourceFile": "lib/quotes.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1690111864179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1690111869964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-stl\n\\ No newline at end of file\n+StatefulBuilder(\r\n+  builder: (BuildContext context, setState) {\r\n+    return ;\r\n+  },\r\n+),\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1690111875946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,15 @@\n-StatefulBuilder(\r\n-  builder: (BuildContext context, setState) {\r\n-    return ;\r\n-  },\r\n-),\n\\ No newline at end of file\n+import 'package:flutter/material.dart';\r\n+\r\n+class MyWidget extends StatefulWidget {\r\n+  const MyWidget({super.key});\r\n+\r\n+  @override\r\n+  State<MyWidget> createState() => _MyWidgetState();\r\n+}\r\n+\r\n+class _MyWidgetState extends State<MyWidget> {\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return const Placeholder();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1690111888214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import 'package:flutter/material.dart';\r\n \r\n-class MyWidget extends StatefulWidget {\r\n-  const MyWidget({super.key});\r\n+class Quotes extends StatefulWidget {\r\n+  const Quotes({super.key});\r\n \r\n   @override\r\n-  State<MyWidget> createState() => _MyWidgetState();\r\n+  State<Quotes> createState() => _QuotesState();\r\n }\r\n \r\n-class _MyWidgetState extends State<MyWidget> {\r\n+class _QuotesState extends State<Quotes> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Placeholder();\r\n   }\r\n"
+                },
+                {
+                    "date": 1690111932784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n \r\n class _QuotesScreenState extends State<QuotesScreen> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Placeholder();\r\n+    return const Scaffold();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1690112574511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,38 @@\n+import 'networking.dart';\r\n+\r\n+class QuoteModel {\r\n+  late String content;\r\n+  late String author;\r\n+  late List<String> tags;\r\n+\r\n+  // QuoteModel(\r\n+  //     {this.sId,\r\n+  //     this.content,\r\n+  //     this.author,\r\n+  //     this.tags,\r\n+  //     this.authorSlug,\r\n+  //     this.length,\r\n+  //     this.dateAdded,\r\n+  //     this.dateModified});\r\n+\r\n+  QuoteModel.fromJson(Map<String, dynamic> json) {\r\n+    content = json['content'];\r\n+    author = json['author'];\r\n+    tags = json['tags'].cast<String>();\r\n+  }\r\n+\r\n+  Map<String, dynamic> toJson() {\r\n+    final Map<String, dynamic> data = <String, dynamic>{};\r\n+    data['content'] = content;\r\n+    data['author'] = author;\r\n+    data['tags'] = tags;\r\n+    return data;\r\n+  }\r\n+\r\n+  Future<void> getCurrentLocationWeather() async {\r\n+    Map<String, dynamic> quoteInfo =\r\n+        await NetworkHelper(url: 'https://api.quotable.io/random').getData();\r\n+\r\n+    print(quoteInfo);\r\n+  }\r\n+}\r\n"
+                }
+            ],
+            "date": 1690111864179,
+            "name": "Commit-0",
+            "content": "stl"
+        }
+    ]
+}
