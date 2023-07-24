@@ -13,7 +13,7 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
-  void getData() async {
+  void fetchData() async {
     QuoteModel quote = QuoteModel();
     ImageModel image = ImageModel();
     await quote.getRandomQoute();
@@ -31,7 +31,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   void initState() {
-    getData();
+    fetchData();
     super.initState();
   }
 
